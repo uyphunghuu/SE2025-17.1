@@ -1,22 +1,13 @@
-FROM golang:1.21-alpine AS builder
+FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY go.mod go.sum* ./
-RUN go mod download || true
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
-
-RUN CGO_ENABLED=0 GOOS=linux go build -o analytics-service .
-
-FROM alpine:latest
-
-RUN apk --no-cache add ca-certificates
-
-WORKDIR /root/
-
-COPY --from=builder /app/analytics-service .
+COPY app ./app
+COPY schema ./schema
 
 EXPOSE 8084
 
-CMD ["./analytics-service"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8084"]
