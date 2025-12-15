@@ -18,7 +18,7 @@ def export_pdf(type: str, ref_id: int):
 def export_csv(type: str, ref_id: int):
     file_path = service.export_csv(type, ref_id)
     return FileResponse(
-        file_path,
+         file_path,
         media_type="text/csv",
         filename=f"{type}_{ref_id}.csv"
     )
