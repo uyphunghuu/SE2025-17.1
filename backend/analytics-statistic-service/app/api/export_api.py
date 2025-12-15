@@ -14,6 +14,7 @@ def export_pdf(type: str, ref_id: int):
         filename=f"{type}_{ref_id}.pdf"
     )
 
+
 @router.get("/csv", response_class=FileResponse)
 def export_csv(type: str, ref_id: int):
     file_path = service.export_csv(type, ref_id)

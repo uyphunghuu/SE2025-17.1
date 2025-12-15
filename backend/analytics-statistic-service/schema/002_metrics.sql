@@ -7,6 +7,7 @@ CREATE TABLE class_engagement_stats (
   updated_at TIMESTAMP DEFAULT now()
 );
 
+
 CREATE TABLE question_analytics (
   question_id INT PRIMARY KEY,
   correct_rate FLOAT,

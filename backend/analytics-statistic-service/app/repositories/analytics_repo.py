@@ -41,6 +41,7 @@ class AnalyticsRepository:
     # =======================
     # QUESTION REPORT ✅ (BỔ SUNG)
     # =======================
+
     def get_question_analytics(self, question_id):
         with get_db_connection() as conn:
             cur = conn.cursor()

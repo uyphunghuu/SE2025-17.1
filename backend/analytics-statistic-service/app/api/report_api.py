@@ -16,6 +16,7 @@ def student_report(student_id: int):
 def class_report(class_id: int):
     return service.class_report(class_id)
 
+
 @router.get("/question/{question_id}")
 def question_report(question_id: int):
     return service.question_report(question_id)

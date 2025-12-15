@@ -9,6 +9,7 @@ CREATE TABLE quiz_performance_metrics (
   updated_at TIMESTAMP DEFAULT now()
 );
 
+
 CREATE TABLE user_performance_summary (
   user_id INT PRIMARY KEY,
   avg_score FLOAT,

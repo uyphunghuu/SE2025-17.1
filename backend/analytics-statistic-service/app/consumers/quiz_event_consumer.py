@@ -6,7 +6,9 @@ def handle_quiz_submitted(event):
       score,
       topic_breakdown
     }
+
     """
     # 1. lưu snapshot
     # 2. recompute metrics
     # 3. update analytics_db
+

@@ -11,3 +11,4 @@ class AnalyticsService:
             "p90": df["score"].quantile(0.9),
             "distribution": df["score"].value_counts().to_dict()
         }
+
